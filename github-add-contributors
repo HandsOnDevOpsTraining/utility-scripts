@@ -1,0 +1,7 @@
+while read -r user; do
+  if gh repo add-collaborator "$user" --repo myuser/myrepo; then
+    echo "Added $user successfully."
+  else
+    echo "Failed to add $user!" >&2
+  fi
+done < collaborators.txt
